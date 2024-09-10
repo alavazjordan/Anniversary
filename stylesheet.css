@@ -1,0 +1,70 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.hearts {
+    display: flex;
+    /* Align hearts in the center of the viewport */
+}
+
+.heart {
+    position: relative;
+    width: 00px;
+    height: 00px;
+    background: red;
+    transform: rotate(-45deg);
+    border-radius: 50% 50% 0 0;
+    animation: pulse 1.5s infinite;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    background: red;
+    border-radius: 100px 100px 0 0;
+}
+
+.heart::before {
+    top: -200px;
+    left: 10px;
+    transform: rotate(45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    top: -200px;
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 100% 100%;
+}
+
+/* Target individual hearts */
+.heart1 {
+    margin-right: 100px; /* Adjust spacing between the hearts */
+    /* You can also use absolute positioning if needed */
+}
+
+.heart2 {
+    margin-left: 100px; /* Adjust spacing or positioning for the second heart */
+    /* You can also use absolute positioning if needed */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
